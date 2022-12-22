@@ -17,5 +17,11 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false); 
+        
+        Person Person = new Person();
+        addObject(Person, 92, 210);
+        
+        Boss1 Boss1 = new Boss1();
+        addObject(Boss1, 468, 204);
     }
 }
