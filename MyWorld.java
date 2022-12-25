@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    Person Person = new Person();
+    Boss1 Boss1 = new Boss1();
+    Health Health = new Health();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -18,10 +20,30 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false); 
         
-        Person Person = new Person();
-        addObject(Person, 92, 210);
+        addObject(Person, 90, 210);
+        addObject(Boss1, 470, 205);
+        addObject(Health, 65, 20);
         
-        Boss1 Boss1 = new Boss1();
-        addObject(Boss1, 468, 204);
+        createFireball();
+    }
+    
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over" , 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
+    public void createFireball()
+    {
+        Fireball Fireball = new Fireball();
+        //random number ---> Greenfoot.getRandomNumber
+        int x = 100;
+        int y = 100;
+        addObject(Fireball, x, y);
+    }
+    
+    public Health getHealth()
+    {
+        return Health;
     }
 }

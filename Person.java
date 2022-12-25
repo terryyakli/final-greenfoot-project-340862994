@@ -33,7 +33,36 @@ public class Person extends Actor
         }
         else if(Greenfoot.isKeyDown("space"))
         {
+            //attack code goes here
             setLocation(getX() + 10, getY());
+        }
+        
+        //Removes Fireball if hit
+        damage();
+    }
+    boolean x = false;
+    public void damage()
+    {
+        if(isTouching(Fireball.class))
+        {
+            removeTouching(Fireball.class);
+            MyWorld world = (MyWorld) getWorld();
+            Health Health = world.getHealth();
+            world.createFireball(); 
+            if(x == false)
+            {
+                Health.damage();
+                x = true;
+                if(Health.health <=0)
+                {
+                    world.gameOver();
+                }
+            }
+        }
+        else
+        {
+            x = false;
+            
         }
     }
 }
