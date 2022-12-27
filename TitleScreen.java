@@ -32,7 +32,7 @@ public class TitleScreen extends World
     
     private void prepare()
     {
-        Label label = new Label ("Use \u2190 and \u2192 to Move", 40);
+        Label label = new Label ("Use W, A, S, D to Move", 40);
         addObject(label,220,257);
         label.setLocation(297,243);
         label.setLocation(305,240);
