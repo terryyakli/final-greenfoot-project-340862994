@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Boss1 here.
+ * person fights this boss.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Martin) 
+ * @version (2022/12/26)
  */
 public class Boss1 extends Actor
 {

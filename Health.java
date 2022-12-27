@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Health here.
+ * health bar for person.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Martin) 
+ * @version (2022/12/26)
  */
 public class Health extends Actor
 {
