@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Person extends Actor
 {
+    SimpleTimer count = new SimpleTimer();
     /**
      * Act - do whatever the Person wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -33,8 +34,10 @@ public class Person extends Actor
         }
         else if(Greenfoot.isKeyDown("space"))
         {
-            //attack code goes here
-            setLocation(getX() + 10, getY());
+            Attack Attack = new Attack();
+            getWorld().addObject(Attack, getX(), getY());
+            Attack.setRotation(getRotation());
+            Attack.setLocation(getX() + 50, getY());
         }
         
         //Removes Fireball if hit
@@ -47,7 +50,7 @@ public class Person extends Actor
         {
             removeTouching(Fireball.class);
             MyWorld world = (MyWorld) getWorld();
-            Health Health = world.getHealth();
+            Health Health = world.getPlayerHealthBar();
             world.createFireball(); 
             if(x == false)
             {
@@ -55,7 +58,7 @@ public class Person extends Actor
                 x = true;
                 if(Health.health <=0)
                 {
-                    world.gameOver();
+                    world.gameOverLose();
                 }
             }
         }

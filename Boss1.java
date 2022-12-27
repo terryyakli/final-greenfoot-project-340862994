@@ -15,5 +15,30 @@ public class Boss1 extends Actor
     public void act()
     {
         // Add your action code here.
+        damage();
+    }
+    
+    boolean x = false;
+    public void damage()
+    {
+        if(isTouching(Attack.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            Health2 Health = world.getBossHealthBar();
+            if(x == false)
+            {
+                Health.damage();
+                x = true;
+                if(Health.health <=0)
+                {
+                    world.gameOverWin();
+                }
+            }
+        }
+        else
+        {
+            x = false;
+            
+        }
     }
 }
