@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * person fights this boss.
  * 
  * @author (Martin) 
- * @version (2022/12/26)
+ * @version (2022/12/29)
  */
 public class Boss1 extends Actor
 {
@@ -31,14 +31,14 @@ public class Boss1 extends Actor
                 x = true;
                 if(Health.health <=0)
                 {
-                    world.gameOverWin();
+                    world.removeObject(this);
+                    world.increaseLevel();
                 }
             }
         }
         else
         {
             x = false;
-            
         }
     }
 }
