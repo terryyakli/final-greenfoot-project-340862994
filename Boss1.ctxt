@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Boss1
-comment0.text=\r\n\ person\ fights\ this\ boss.\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2022/12/26)\r\n
+comment0.text=\r\n\ person\ fights\ this\ boss.\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2022/12/29)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Boss1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

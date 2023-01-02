@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * moveable character to defeat boss1.
  * 
  * @author (Martin) 
- * @version (2022/12/26)
+ * @version (2023/01/02)
  */
 public class Person extends Actor
 {
@@ -58,7 +58,7 @@ public class Person extends Actor
                 x = true;
                 if(Health.health <=0)
                 {
-                    world.gameOverLose();
+                    world.gameOver();
                 }
             }
         }
