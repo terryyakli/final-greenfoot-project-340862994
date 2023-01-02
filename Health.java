@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Health extends Actor
 {
-    int health = 5;
+    int health = 1; //change this
     int healthBarWidth = 200;
     int healthBarHeight = 15;
     int healthPoint = (int)healthBarWidth/health;

@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * world
  * 
  * @author (Martin) 
- * @version (2022/12/29)
+ * @version (2023/01/02)
  */
 public class MyWorld extends World
 {
@@ -52,16 +52,10 @@ public class MyWorld extends World
         addObject(level, 70, 470);
     }
     
-    public void gameOverWin()
+    public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over Win" , 100);
-        addObject(gameOverLabel, 400, 250);
-    }
-    
-    public void gameOverLose()
-    {
-        Label gameOverLabel = new Label("Game Over Lose" , 100);
-        addObject(gameOverLabel, 400, 250);  
+        EndScreen world = new EndScreen();
+        Greenfoot.setWorld(world);
     }
     
     public void increaseLevel()
