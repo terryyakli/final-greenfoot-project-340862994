@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * moveable character to defeat boss1.
  * 
  * @author (Martin) 
- * @version (2023/01/02)
+ * @version (2023/01/09)
  */
 public class Person extends Actor
 {
@@ -16,23 +16,43 @@ public class Person extends Actor
     public void act()
     {
         // Add your action code here.
-        if(Greenfoot.isKeyDown("A"))
+        int x = 0;
+        int y = 0;
+        
+        
+        if(Greenfoot.isKeyDown("D")) 
         {
-            setLocation(getX() - 2, getY());
+            x++;
         }
-        else if(Greenfoot.isKeyDown("D"))
+        if(Greenfoot.isKeyDown("A")) 
         {
-            setLocation(getX() + 2, getY());
+            x--;
         }
-        else if(Greenfoot.isKeyDown("W"))
+        setLocation(getX() + x, getY());
+
+        if(isTouching(Boundary.class))
         {
-            setLocation(getX(), getY() - 2);
+            setLocation(getX() - x, getY());
         }
-        else if(Greenfoot.isKeyDown("S"))
+        
+        
+        if(Greenfoot.isKeyDown("S")) 
         {
-            setLocation(getX(), getY() + 2);
+            y++;
         }
-        else if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("W")) 
+        {
+            y--;
+        }
+        setLocation(getX(), getY() + y);
+        
+        if(isTouching(Boundary.class))
+        {
+            setLocation(getX(), getY() - y);
+        }
+        
+        
+        if(Greenfoot.isKeyDown("space"))
         {
             Attack Attack = new Attack();
             getWorld().addObject(Attack, getX(), getY());

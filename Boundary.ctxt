@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Boundary
+comment0.text=\r\n\ Blocks\ person1\ from\ going\ outside\ of\ boss\ area\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2023/01/09)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Boundary\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2

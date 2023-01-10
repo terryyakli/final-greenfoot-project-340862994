@@ -1,14 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * First screen shown when game start
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Martin) 
+ * @version (2023/01/09)
  */
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label("Game", 60);
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -16,7 +15,8 @@ public class TitleScreen extends World
     public TitleScreen()
     {
         super(600, 400, 1);
-
+        
+        Label titleLabel = new Label("Game", 100);
         addObject(titleLabel, 300, 75);
         prepare();
     }
@@ -32,15 +32,10 @@ public class TitleScreen extends World
     
     private void prepare()
     {
-        Label label = new Label ("Use W, A, S, D to Move", 40);
-        addObject(label,220,257);
-        label.setLocation(297,243);
-        label.setLocation(305,240);
-        Label label2 = new Label ("Press <space> to Start", 40);
-        addObject(label2,249,331);
-        label2.setLocation(326,319);
-        label.setLocation(328,253);
-        label2.setLocation(295,326);
-        label.setLocation(278,251);
+        Label label = new Label ("Use W, A, S, D to Move and [space] to Attack", 30);
+        addObject(label,300,360);
+        
+        Label label2 = new Label ("Press [space] to Start", 40);
+        addObject(label2,300,300);
     }
 }
