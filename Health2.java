@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * health bar for boss1.
  * 
  * @author (Martin) 
- * @version (2022/12/26)
+ * @version (2023/01/09)
  */
 public class Health2 extends Actor
 {
@@ -16,11 +16,6 @@ public class Health2 extends Actor
      * Act - do whatever the Health2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
-    public Health2()
-    {
-        update();
-    }
     
     public void act()
     {

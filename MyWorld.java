@@ -35,6 +35,12 @@ public class MyWorld extends World
         levelLabel = new Label(0, 50);
         addObject(levelLabel, 150, 470);
         
+        Boundary Boundary = new Boundary();
+        addObject(Boundary, 400, 40);
+        
+        Boundary Boundary2 = new Boundary();
+        addObject(Boundary2, 400, 420);
+        
         addObject(playerHealthBar, 110, 20);
         
         createFireball();
@@ -67,6 +73,8 @@ public class MyWorld extends World
         {
             speed += 1;
         }
+        
+        createBoss();
     }
     
     public void createFireball()
@@ -83,7 +91,7 @@ public class MyWorld extends World
     {
         Boss1 Boss1 = new Boss1();
         addObject(Boss1, 650, 250);
-
+        
         addObject(bossHealthBar, 400, 470);
     }
     
