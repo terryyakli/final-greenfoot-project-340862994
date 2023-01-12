@@ -43,7 +43,7 @@ public class MyWorld extends World
         
         addObject(playerHealthBar, 110, 20);
         
-        createFireball();
+        attackPattern();
         createBoss();
         names();
     }
@@ -81,9 +81,23 @@ public class MyWorld extends World
     {
         Fireball Fireball = new Fireball();
         Fireball.setSpeed(speed);
-        int x = 800;
-        int y = Greenfoot.getRandomNumber(500);
+        int x = randomNumber(800, 1500);
+        int y = randomNumber(50, 410);
         addObject(Fireball, x, y);
+    }
+    
+    public int randomNumber(int small, int big)
+    {
+        int result = Greenfoot.getRandomNumber(big - small + 1);
+        return result + small;
+    }
+    
+    public void attackPattern()
+    {
+        for(int i = 0; i <= 4; i++)
+        {
+            createFireball();
+        }
     }
     
     //may create more than 1 boss in future

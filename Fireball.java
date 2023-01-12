@@ -17,7 +17,7 @@ public class Fireball extends Actor
     public void act()
     {
         // Add your action code here.
-        int x = getX() - speed;
+        int x = getX() - 3;//speed;
         int y = getY();
         setLocation(x, y);
         
@@ -25,6 +25,7 @@ public class Fireball extends Actor
         if(getX() <= 0)
         {
             world.removeObject(this);
+            world.createFireball();
         }
     }
     
