@@ -51,21 +51,28 @@ public class Person extends Actor
             setLocation(getX(), getY() - y);
         }
         
-        
         if(Greenfoot.isKeyDown("space"))
         {
-            Attack Attack = new Attack();
-            getWorld().addObject(Attack, getX(), getY());
-            Attack.setRotation(getRotation());
-            Attack.setLocation(getX() + 50, getY());
+                attack();
         }
         
         //Removes Fireball if hit
         damage();
     }
+    
+    public void attack()
+    {
+        Attack Attack = new Attack();
+        getWorld().addObject(Attack, getX(), getY());
+        Attack.setRotation(getRotation());
+        Attack.setLocation(getX() + 50, getY());
+        Greenfoot.delay(1);
+    }
+    
     boolean x = false;
     public void damage()
     {
+        GreenfootSound oofSound = new GreenfootSound("oof.mp3");
         if(isTouching(Fireball.class))
         {
             removeTouching(Fireball.class);
@@ -74,7 +81,8 @@ public class Person extends Actor
             world.createFireball(); 
             if(x == false)
             {
-                Health.damage();
+                //Health.damage();
+                oofSound.play();
                 x = true;
                 if(Health.health <=0)
                 {
@@ -85,7 +93,6 @@ public class Person extends Actor
         else
         {
             x = false;
-            
         }
     }
 }

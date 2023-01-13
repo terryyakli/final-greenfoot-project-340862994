@@ -13,6 +13,8 @@ public class Fireball extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed = 1;
+    GreenfootImage[] Fireball = new GreenfootImage[7];
+    SimpleTimer animationTimer = new SimpleTimer();
     
     public void act()
     {
@@ -25,7 +27,35 @@ public class Fireball extends Actor
         if(getX() <= 0)
         {
             world.removeObject(this);
+            world.createFireball();
         }
+        
+        animateFireball();
+    }
+    
+    public Fireball()
+    {
+        for(int i = 0; i < Fireball.length; i++)
+        {
+            Fireball[i] = new GreenfootImage("images/Fireball/Fireball" + i + ".png");
+            Fireball[i].scale(100, 50);
+            setImage(Fireball[i]);
+        }
+        
+        animationTimer.mark();
+    }
+    
+    int imageIndex = 0;
+    public void animateFireball()
+    {
+        if(animationTimer.millisElapsed() < 50)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        setImage(Fireball[imageIndex]);
+        imageIndex = (imageIndex + 1) % Fireball.length;
     }
     
     public void setSpeed(int spd)

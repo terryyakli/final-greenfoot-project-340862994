@@ -10,6 +10,8 @@ public class Boundary extends Actor
 {
     int boundaryWidth = 1000;
     int boundaryHeight = 1;
+    Color trans = new Color(0, 0, 0, 0);
+    
     /**
      * Act - do whatever the Boundary wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,7 +21,7 @@ public class Boundary extends Actor
         // Add your action code here.
         setImage(new GreenfootImage(boundaryWidth, boundaryHeight));
         GreenfootImage myImage = getImage();
-        myImage.setColor(Color.WHITE);
+        myImage.setColor(Color.BLACK);
         myImage.drawRect(0, 0, boundaryWidth, boundaryHeight);
     }
 }
