@@ -24,7 +24,7 @@ public class Fireball extends Actor
         setLocation(x, y);
         
         MyWorld world = (MyWorld) getWorld();
-        if(getX() <= 0)
+        if(getX() <= -100)
         {
             world.removeObject(this);
             world.createFireball();

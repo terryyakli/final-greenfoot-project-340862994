@@ -32,7 +32,7 @@ public class TitleScreen extends World
     
     private void prepare()
     {
-        Label label = new Label ("Use W, A, S, D to Move and [space] to Attack", 30);
+        Label label = new Label ("Use W, A, S, D to Move", 30);
         addObject(label,300,360);
         
         Label label2 = new Label ("Press [space] to Start", 40);

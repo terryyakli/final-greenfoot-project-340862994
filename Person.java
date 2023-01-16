@@ -22,11 +22,11 @@ public class Person extends Actor
         
         if(Greenfoot.isKeyDown("D")) 
         {
-            x++;
+            x+=2;
         }
         if(Greenfoot.isKeyDown("A")) 
         {
-            x--;
+            x-=2;
         }
         setLocation(getX() + x, getY());
 
@@ -38,11 +38,11 @@ public class Person extends Actor
         
         if(Greenfoot.isKeyDown("S")) 
         {
-            y++;
+            y+=2;
         }
         if(Greenfoot.isKeyDown("W")) 
         {
-            y--;
+            y-=2;
         }
         setLocation(getX(), getY() + y);
         
@@ -51,22 +51,10 @@ public class Person extends Actor
             setLocation(getX(), getY() - y);
         }
         
-        if(Greenfoot.isKeyDown("space"))
-        {
-                attack();
-        }
-        
         //Removes Fireball if hit
         damage();
-    }
-    
-    public void attack()
-    {
-        Attack Attack = new Attack();
-        getWorld().addObject(Attack, getX(), getY());
-        Attack.setRotation(getRotation());
-        Attack.setLocation(getX() + 50, getY());
-        Greenfoot.delay(1);
+        collectCoin();
+        heal();
     }
     
     boolean x = false;
@@ -78,11 +66,11 @@ public class Person extends Actor
             removeTouching(Fireball.class);
             MyWorld world = (MyWorld) getWorld();
             Health Health = world.getPlayerHealthBar();
-            world.createFireball(); 
             if(x == false)
             {
                 //Health.damage();
                 oofSound.play();
+                world.createFireball();
                 x = true;
                 if(Health.health <=0)
                 {
@@ -93,6 +81,43 @@ public class Person extends Actor
         else
         {
             x = false;
+        }
+    }
+    
+    public void collectCoin()
+    {
+        if(isTouching(Coin.class))
+        {
+            removeTouching(Coin.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createCoin();
+            world.increaseScore();
+        }
+    }
+    
+    boolean y = false;
+    public void heal()
+    {
+        if(isTouching(Heal.class))
+        {
+            removeTouching(Heal.class);
+            MyWorld world = (MyWorld) getWorld();
+            Health Health = world.getPlayerHealthBar();
+            if(y == false)
+            {
+                if(Health.health == 5)
+                {
+                    world.createHeal();
+                    return;
+                }
+                Health.heal();
+                world.createHeal();
+                y = true;
+            }
+        }
+        else
+        {
+            y = false;
         }
     }
 }
