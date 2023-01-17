@@ -68,7 +68,7 @@ public class Person extends Actor
             Health Health = world.getPlayerHealthBar();
             if(x == false)
             {
-                //Health.damage();
+                Health.damage();
                 oofSound.play();
                 world.createFireball();
                 x = true;
