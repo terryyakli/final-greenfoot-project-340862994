@@ -8,7 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Person extends Actor
 {
-    SimpleTimer count = new SimpleTimer();
+    GreenfootImage[] personRight = new GreenfootImage[4];
+    GreenfootImage[] personLeft = new GreenfootImage[4];
+    SimpleTimer animationTimer = new SimpleTimer();
+    
+    String facing = "right";
     /**
      * Act - do whatever the Person wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,10 +27,12 @@ public class Person extends Actor
         if(Greenfoot.isKeyDown("D")) 
         {
             x+=2;
+            facing = "right";
         }
         if(Greenfoot.isKeyDown("A")) 
         {
             x-=2;
+            facing = "left";
         }
         setLocation(getX() + x, getY());
 
@@ -55,6 +61,48 @@ public class Person extends Actor
         damage();
         collectCoin();
         heal();
+        animatePerson();
+    }
+    
+    public Person()
+    {
+        for(int i = 0; i < personRight.length; i++)
+        {
+            personRight[i] = new GreenfootImage("images/Person/person" + i + ".png");
+            personRight[i].scale(50, 50);
+            setImage(personRight[i]);
+        }
+        
+        for(int i = 0; i < personLeft.length; i++)
+        {
+            personLeft[i] = new GreenfootImage("images/Person/person" + i + ".png");
+            personLeft[i].mirrorHorizontally();
+            personLeft[i].scale(50, 50);
+            setImage(personLeft[i]);
+        }
+        
+        animationTimer.mark();
+    }
+    
+    int imageIndex = 0;
+    public void animatePerson()
+    {
+        if(animationTimer.millisElapsed() < 100)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if(facing.equals("right"))
+        {
+            setImage(personRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % personRight.length;
+        }
+        else
+        {
+            setImage(personLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % personLeft.length;
+        }
     }
     
     boolean x = false;
@@ -86,8 +134,10 @@ public class Person extends Actor
     
     public void collectCoin()
     {
+        GreenfootSound coinSound = new GreenfootSound("coin.mp3");
         if(isTouching(Coin.class))
         {
+            coinSound.play();
             removeTouching(Coin.class);
             MyWorld world = (MyWorld) getWorld();
             world.createCoin();
@@ -98,8 +148,10 @@ public class Person extends Actor
     boolean y = false;
     public void heal()
     {
+        GreenfootSound healSound = new GreenfootSound("heal.mp3");
         if(isTouching(Heal.class))
         {
+            healSound.play();
             removeTouching(Heal.class);
             MyWorld world = (MyWorld) getWorld();
             Health Health = world.getPlayerHealthBar();

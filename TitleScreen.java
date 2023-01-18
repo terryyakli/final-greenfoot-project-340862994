@@ -16,7 +16,7 @@ public class TitleScreen extends World
     {
         super(600, 400, 1);
         
-        Label titleLabel = new Label("Game", 100);
+        Label titleLabel = new Label("Coin Collect", 100);
         addObject(titleLabel, 300, 75);
         prepare();
     }
