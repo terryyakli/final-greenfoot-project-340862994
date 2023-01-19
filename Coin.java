@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Coin here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Martin) 
+ * @version (2023/01/18)
  */
 public class Coin extends Actor
 {  
@@ -22,6 +22,7 @@ public class Coin extends Actor
         int y = getY();
         setLocation(x, y);
         
+        //animates the coin
         animateCoin();
     }
     
@@ -37,6 +38,9 @@ public class Coin extends Actor
         animationTimer.mark();
     }
     
+    /*
+     * animates the coin
+     */
     int imageIndex = 0;
     public void animateCoin()
     {

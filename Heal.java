@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Heal here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Martin) 
+ * @version (2023/01/18)
  */
 public class Heal extends Actor
 {
@@ -21,7 +21,10 @@ public class Heal extends Actor
         int x = getX();
         int y = getY();
         setLocation(x, y);
+        
+        animateHealthbottle();
     }
+    
     
     public Heal()
     {
@@ -35,8 +38,11 @@ public class Heal extends Actor
         animationTimer.mark();
     }
     
+    /*
+     * animates health bottle
+     */
     int imageIndex = 0;
-    public void animateCoin()
+    public void animateHealthbottle()
     {
         if(animationTimer.millisElapsed() < 50)
         {

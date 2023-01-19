@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * moveable character to defeat boss1.
  * 
  * @author (Martin) 
- * @version (2023/01/09)
+ * @version (2023/01/18)
  */
 public class Person extends Actor
 {
@@ -23,7 +23,7 @@ public class Person extends Actor
         int x = 0;
         int y = 0;
         
-        
+        //allows person to move
         if(Greenfoot.isKeyDown("D")) 
         {
             x+=2;
@@ -35,7 +35,8 @@ public class Person extends Actor
             facing = "left";
         }
         setLocation(getX() + x, getY());
-
+        
+        //blocks person from going out of fireball range
         if(isTouching(Boundary.class))
         {
             setLocation(getX() - x, getY());
@@ -51,13 +52,12 @@ public class Person extends Actor
             y-=2;
         }
         setLocation(getX(), getY() + y);
-        
+        //blocks person from going out of fireball range
         if(isTouching(Boundary.class))
         {
             setLocation(getX(), getY() - y);
         }
         
-        //Removes Fireball if hit
         damage();
         collectCoin();
         heal();
@@ -84,6 +84,9 @@ public class Person extends Actor
         animationTimer.mark();
     }
     
+    /*
+     * animtes person
+     */
     int imageIndex = 0;
     public void animatePerson()
     {
@@ -105,6 +108,9 @@ public class Person extends Actor
         }
     }
     
+    /*
+     * deals damage to person health bar and plays sound if touching fireball.class
+     */
     boolean x = false;
     public void damage()
     {
@@ -132,6 +138,9 @@ public class Person extends Actor
         }
     }
     
+    /*
+     * collects coin and plays sound if touching coin.class
+     */
     public void collectCoin()
     {
         GreenfootSound coinSound = new GreenfootSound("coin.mp3");
@@ -145,6 +154,9 @@ public class Person extends Actor
         }
     }
     
+    /*
+     * heals player health bar and plays sound if touching heal.class
+     */
     boolean y = false;
     public void heal()
     {

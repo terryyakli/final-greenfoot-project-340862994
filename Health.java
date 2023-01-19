@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * health bar for person.
  * 
  * @author (Martin) 
- * @version (2023/01/09)
+ * @version (2023/01/18)
  */
 public class Health extends Actor
 {
@@ -23,6 +23,9 @@ public class Health extends Actor
         update();
     }
     
+    /*
+     * updates health bar in MyWorld according to damage taken
+     */
     public void update()
     {
         setImage(new GreenfootImage(healthBarWidth + 2, healthBarHeight + 2));
@@ -33,11 +36,17 @@ public class Health extends Actor
         myImage.fillRect(1, 1, health * healthPoint, healthBarHeight);
     }
     
+    /*
+     * subtracts health points due to fireball hits
+     */
     public void damage()
     {
         health--;
     }
     
+    /*
+     * adds health points if healhtbottles are used
+     */
     public void heal()
     {
         health++;

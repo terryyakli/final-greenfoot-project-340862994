@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * world
  * 
  * @author (Martin) 
- * @version (2023/01/02)
+ * @version (2023/01/18)
  */
 public class MyWorld extends World
 {
@@ -26,6 +26,9 @@ public class MyWorld extends World
         prepare();
     }
     
+    /*
+     * Creates all actors needded in MyWorld
+     */
     public void prepare()
     {
         Person Person = new Person();
@@ -48,6 +51,9 @@ public class MyWorld extends World
         names();
     }
     
+    /*
+     * Creates all labels in MyWorld
+     */
     public void names()
     {
         Label health = new Label("HP", 20);
@@ -56,12 +62,18 @@ public class MyWorld extends World
         addObject(coin, 70, 470);
     }
     
+    /*
+     * Ends the game and sets world to EndScreen
+     */
     public void gameOver()
     {
         EndScreen world = new EndScreen();
         Greenfoot.setWorld(world);
     }
     
+    /*
+     * Creates 1 fireball within random coordinates 
+     */
     public void createFireball()
     {
         Fireball Fireball = new Fireball();
@@ -71,6 +83,9 @@ public class MyWorld extends World
         addObject(Fireball, x, y);
     }
     
+    /*
+     * spawns multiple fireballs
+     */
     public void fireballPattern()
     {
         for(int i = 0; i <= 4; i++)
@@ -79,6 +94,9 @@ public class MyWorld extends World
         }
     }
     
+    /*
+     * Creates 1 coin within random coordinates
+     */
     public void createCoin()
     {
         Coin Coin = new Coin();
@@ -87,6 +105,9 @@ public class MyWorld extends World
         addObject(Coin, x, y);
     }
     
+    /*
+     * Increases the score
+     */
     public void increaseScore()
     {
         coin++;
@@ -97,6 +118,9 @@ public class MyWorld extends World
         }
     }
     
+    /*
+     * Spawns heal for Person to drink
+     */
     public void createHeal()
     {
         Heal Heal = new Heal();
@@ -105,13 +129,18 @@ public class MyWorld extends World
         addObject(Heal, x, y);
     }
     
+    /*
+     * Random number generator within coordinates
+     */
     public int randomNumber(int small, int big)
     {
         int result = Greenfoot.getRandomNumber(big - small + 1);
         return result + small;
     }
     
-    
+    /*
+     * returns value of health bar back to Health
+     */
     public Health getPlayerHealthBar()
     {
         return playerHealthBar;

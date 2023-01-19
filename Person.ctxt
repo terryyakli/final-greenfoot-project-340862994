@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Person
-comment0.text=\r\n\ moveable\ character\ to\ defeat\ boss1.\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2023/01/09)\r\n
+comment0.text=\r\n\ moveable\ character\ to\ defeat\ boss1.\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2023/01/18)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Person\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
@@ -12,6 +12,7 @@ comment4.params=
 comment4.target=void\ damage()
 comment5.params=
 comment5.target=void\ collectCoin()
+comment5.text=\r\n\ collects\ coin\ and\ plays\ sound\ if\ touching\ coin.class\r\n
 comment6.params=
 comment6.target=void\ heal()
 numComments=7

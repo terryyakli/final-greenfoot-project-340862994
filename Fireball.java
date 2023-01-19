@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * an attack of boss1.
  * 
  * @author (Martin) 
- * @version (2022/12/29)
+ * @version (2023/01/18)
  */
 public class Fireball extends Actor
 {
@@ -23,6 +23,7 @@ public class Fireball extends Actor
         int y = getY();
         setLocation(x, y);
         
+        //removes fireball once it gets to -100 x
         MyWorld world = (MyWorld) getWorld();
         if(getX() <= -100)
         {
@@ -30,6 +31,7 @@ public class Fireball extends Actor
             world.createFireball();
         }
         
+        //animates fireball
         animateFireball();
     }
     
@@ -44,7 +46,9 @@ public class Fireball extends Actor
         
         animationTimer.mark();
     }
-    
+    /*
+     * animates fireball
+     */
     int imageIndex = 0;
     public void animateFireball()
     {
@@ -58,6 +62,7 @@ public class Fireball extends Actor
         imageIndex = (imageIndex + 1) % Fireball.length;
     }
     
+    //sets speed to fireball
     public void setSpeed(int spd)
     {
         speed = spd;

@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=Health
-comment0.text=\r\n\ health\ bar\ for\ person.\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2023/01/09)\r\n
+comment0.text=\r\n\ health\ bar\ for\ person.\r\n\ \r\n\ @author\ (Martin)\ \r\n\ @version\ (2023/01/18)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Health\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ update()
+comment2.text=\r\n\ updates\ health\ bar\ in\ MyWorld\ according\ to\ damage\ taken\r\n
 comment3.params=
 comment3.target=void\ damage()
+comment3.text=\r\n\ subtracts\ health\ points\ due\ to\ fireball\ hits\r\n
 comment4.params=
 comment4.target=void\ heal()
+comment4.text=\r\n\ adds\ health\ points\ if\ healhtbottles\ are\ used\r\n
 numComments=5

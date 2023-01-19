@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Blocks person1 from going outside of boss area
  * 
  * @author (Martin) 
- * @version (2023/01/09)
+ * @version (2023/01/18)
  */
 public class Boundary extends Actor
 {
@@ -19,6 +19,7 @@ public class Boundary extends Actor
     public void act()
     {
         // Add your action code here.
+        //Spawns a boundary to keep Person within range of fireballs
         setImage(new GreenfootImage(boundaryWidth, boundaryHeight));
         GreenfootImage myImage = getImage();
         myImage.setColor(Color.BLACK);
